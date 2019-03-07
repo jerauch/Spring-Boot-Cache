@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="on-joue-%C3%A0-cache-cache-avec-spring-boot">On joue à cache cache avec Spring Boot</h1>
+<p>En tant que développeur, nous sommes très souvent confrontés à des problèmes de performance dans nos applications.</p>
+<p>Comment fonctionne la majorité des applications ? On va récupérer des données dans une base de données, effectuer un ou plusieurs traitement ou calcul et renvoyer le résultat à l'utilisateur.</p>
+<p>C'est un peu brut, prenons un exemple : Un site de vente en ligne et l'affichage d'une page d'un produit. Comment cela fonctionne dans la majorité des cas ?</p>
+<ul>
+<li>Un visiteur du site veut afficher le produit</li>
+<li>On va lancer une requête pour récupérer les données du produit</li>
+<li>On va lancer une seconde requête pour voir si le produit est en stock</li>
+<li>Ensuite on va récupérer les images du produit</li>
+<li>Notre produit est surement le meilleur du monde et nous allons donc le mettre en avant avec des commentaires positifs donc on va lancer des requêtes pour récupérer ces commentaires et les noms des personnes qui ont déposés les commentaires</li>
+<li>Nous allons faire appel à un service externe pour récupérer par exemple le délai de livraison du produit</li>
+<li>Une fois que nous avons toutes ces données, nous allons générer la page HTML / CSS et l'afficher à notre visiteur</li>
+</ul>
+<p>Arrive maintenant un 2e visiteur sur notre site, qui va afficher le même produit. Nous allons donc relancer tout le traitement précédant. Et pareil pour les milliers de visiteurs suivants et au bout d'un moment la base de données ne suivra plus.</p>
+<p>(Bon ok mon exemple n'est pas pertinent car en toute logique dans ce cas la base de données ne lancera pas milles fois la requête, elle conservera les données en mémoire ...)</p>
+<p>Finalement entre chaque visiteur quelles sont les données qui sont susceptibles d'être modifiée entre chaque affichage ? La quantité en stock du produit ?</p>
+<p>Dans toute application il faut se poser la question de savoir à quelle fréquence les données vont être mise à jour et à quelle fréquence notre application va devoir interroger la base de données.</p>
+<p>Un cache applicatif permet à notre application de stocker temporairement certains objets ou résultats de calculs complexes.</p>
+<p>Spring Boot propose un mécanisme de cache simple et efficace, voyons un exemple.</p>
+<h2 id="cr%C3%A9ation-du-projet">Création du projet</h2>
+<p>On va créer un projet sur https://start.spring.io/ :</p>
+<p><img src="img/1.png" alt="alt text"></p>
+<p>Dans les dépendances on va ajouter <em>Cache</em> et <em>DevTools</em>.</p>
+<p>On télécharge le projet, on l'ouvre avec notre éditeur préféré, vous connaissez la chanson.</p>
+<p>Ensuite nous allons créer une entité 'Contact' :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> com.example.demo.entity;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Contact</span> </span>{
+    <span class="hljs-keyword">long</span> id;
+    String nom;
+    String prenom;
+    String telephone;
+    
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Contact [id="</span> + id + <span class="hljs-string">", nom="</span> + nom + <span class="hljs-string">", prenom="</span> + prenom + <span class="hljs-string">", telephone="</span> + telephone + <span class="hljs-string">"]"</span>;
+    }
+    <span class="hljs-comment">// + getters et setters</span>
+}
+</div></code></pre>
+<p>Ensuite nous allons créer un <em>Repository</em> qui va simuler un accès à une base de données ou à un service externe qui va nous retourner un contact selon un id :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> com.example.demo;
+
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Component;
+<span class="hljs-keyword">import</span> com.example.demo.entity.Contact;
+
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ContactRepository</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Contact <span class="hljs-title">getById</span><span class="hljs-params">(<span class="hljs-keyword">long</span> id)</span> </span>{
+        simulationDUneLenteur();
+        Contact contact = <span class="hljs-keyword">new</span> Contact();
+        contact.setId(id);
+        contact.setNom(<span class="hljs-string">"Contact "</span> + id);
+        contact.setPrenom(<span class="hljs-string">"Prénom "</span> + id);
+        contact.setTelephone(Long.toString(id * <span class="hljs-number">1111111111</span>));
+        <span class="hljs-keyword">return</span> contact;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">simulationDUneLenteur</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">long</span> time = <span class="hljs-number">4000L</span>;
+            Thread.sleep(time);
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(e);
+        }
+    }
+}
+</div></code></pre>
+<p>On aurait pu accéder à une base de données, mais ici l'idée est simplement de créer un service qui sera très lent : chaque appel à la fonction getByiId va durer 4 secondes.</p>
+<p>Nous allons maintenant utiliser ce Repository au lancement de l'application en utilisant une classe de type <em>CommandLineRunner</em> :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> com.example.demo;
+
+<span class="hljs-keyword">import</span> org.slf4j.Logger;
+<span class="hljs-keyword">import</span> org.slf4j.LoggerFactory;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.boot.CommandLineRunner;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Component;
+
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">CommandLineRunner</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Logger logger = LoggerFactory.getLogger(App.class);
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> ContactRepository contactRepository;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">(String... args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        logger.info(<span class="hljs-string">"contact 1 =&gt;"</span> + contactRepository.getById(<span class="hljs-number">1</span>));
+        logger.info(<span class="hljs-string">"contact 2 =&gt;"</span> + contactRepository.getById(<span class="hljs-number">2</span>));
+        logger.info(<span class="hljs-string">"contact 3 =&gt;"</span> + contactRepository.getById(<span class="hljs-number">3</span>));
+        logger.info(<span class="hljs-string">"contact 1 =&gt;"</span> + contactRepository.getById(<span class="hljs-number">1</span>));
+        logger.info(<span class="hljs-string">"contact 1 =&gt;"</span> + contactRepository.getById(<span class="hljs-number">1</span>));
+    }
+}
+</div></code></pre>
+<p>Dans <em>Spring Boot</em> toutes les classes qui implémentent <em>CommandLineRunner</em> sont lancées automatiquement au démarrage du projet.</p>
+<p>Démarrons l'application et voyons les logs :</p>
+<pre class="hljs"><code><div>2019-03-07 13:57:50.875  INFO 23984 --- [  restartedMain] com.example.demo.App                     : contact 1 =&gt;Contact [id=1, nom=Contact 1, prenom=Prénom 1, telephone=1111111111]
+2019-03-07 13:57:54.875  INFO 23984 --- [  restartedMain] com.example.demo.App                     : contact 2 =&gt;Contact [id=2, nom=Contact 2, prenom=Prénom 2, telephone=2222222222]
+2019-03-07 13:57:58.876  INFO 23984 --- [  restartedMain] com.example.demo.App                     : contact 3 =&gt;Contact [id=3, nom=Contact 3, prenom=Prénom 3, telephone=3333333333]
+2019-03-07 13:58:02.877  INFO 23984 --- [  restartedMain] com.example.demo.App                     : contact 1 =&gt;Contact [id=1, nom=Contact 1, prenom=Prénom 1, telephone=1111111111]
+2019-03-07 13:58:06.878  INFO 23984 --- [  restartedMain] com.example.demo.App                     : contact 1 =&gt;Contact [id=1, nom=Contact 1, prenom=Prénom 1, telephone=1111111111]
+</div></code></pre>
+<p>Comme prévu chaque récupération du contact dure 4 secondes (voir le timestamp), même pour le contact 1 alors qu'on le récupère plusieurs fois.</p>
+<h2 id="mise-en-oeuvre-du-cache">Mise en oeuvre du cache</h2>
+<p>On va mettre en place le cache dans le repository avec l'annotation <em>@Cacheable</em> :</p>
+<pre class="hljs"><code><div>    <span class="hljs-meta">@Cacheable</span>(<span class="hljs-string">"contacts"</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Contact <span class="hljs-title">getById</span><span class="hljs-params">(<span class="hljs-keyword">long</span> id)</span> </span>{
+        simulationDUneLenteur();
+        Contact contact = <span class="hljs-keyword">new</span> Contact();
+        contact.setId(id);
+        contact.setNom(<span class="hljs-string">"Contact "</span> + id);
+        contact.setPrenom(<span class="hljs-string">"Prénom "</span> + id);
+        contact.setTelephone(Long.toString(id * <span class="hljs-number">1111111111</span>));
+        <span class="hljs-keyword">return</span> contact;
+    }
+</div></code></pre>
+<p>Et on va activer le cache sur l'application avec <em>@Cacheable</em> :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> com.example.demo;
+
+<span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+<span class="hljs-keyword">import</span> org.springframework.cache.annotation.Cacheable;
+
+<span class="hljs-meta">@EnableCaching</span>
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoApplication</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+</div></code></pre>
+<p>Au démarrage de l'application, <em>Spring Boot</em> va scruter toutes les classes et activer le cache sur les fonctions annotées avec <em>@Cacheable</em>, et va également configurer un <strong>CacheManager</strong> par défaut.</p>
+<p>On relance l'application :</p>
+<pre class="hljs"><code><div>2019-03-07 14:26:18.383  INFO 19836 --- [  restartedMain] com.example.demo.App                     : contact 1 =&gt;Contact [id=1, nom=Contact 1, prenom=Prénom 1, telephone=1111111111]
+2019-03-07 14:26:22.383  INFO 19836 --- [  restartedMain] com.example.demo.App                     : contact 2 =&gt;Contact [id=2, nom=Contact 2, prenom=Prénom 2, telephone=2222222222]
+2019-03-07 14:26:26.384  INFO 19836 --- [  restartedMain] com.example.demo.App                     : contact 3 =&gt;Contact [id=3, nom=Contact 3, prenom=Prénom 3, telephone=3333333333]
+2019-03-07 14:26:26.385  INFO 19836 --- [  restartedMain] com.example.demo.App                     : contact 1 =&gt;Contact [id=1, nom=Contact 1, prenom=Prénom 1, telephone=1111111111]
+2019-03-07 14:26:26.385  INFO 19836 --- [  restartedMain] com.example.demo.App                     : contact 1 =&gt;Contact [id=1, nom=Contact 1, prenom=Prénom 1, telephone=1111111111]
+</div></code></pre>
+<p>La récupération du contact 1 est désormais immédiate pour le 2e et 3e appel : Sping Boot va récupérer l'objet stocké dans son cache au lieu de lancement le traitement lent <em>getById</em>, notre application est plus performante sans avoir modifié le code qui retrouve les contacts.</p>
+<h2 id="cache-et-p%C3%A9remption-des-donn%C3%A9es">Cache et péremption des données</h2>
+<p>Attention aux données stockées en cache. Il ne faudra y stocker que des données qui sont longues à être générées (Résultat de calculs complexes, interrogation de services externes qui peuvent être long, des statistiques qui n'ont pas exemple pas besoin d'être actualisée souvent) et des données qui ne bougent pas dans le temps.</p>
+<p>Revenons sur l'exemple de notre contact, on affiche un contact récupéré depuis le cache, si le contact a été modifié en base de donnée, alors c'est toujours l'ancienne version du contact qui sera affiché !</p>
+<p>Si le contact est modifié dans l'application, on pourra utiliser l'annotation <em>@CachePut</em> sur les méthode update pour préciser au cache qu'il faut mettre à jour l'enregistrement :</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@CachePut</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> User <span class="hljs-title">updateContact</span><span class="hljs-params">(Contact contact)</span> </span>{
+    ...
+}
+</div></code></pre>
+<p>Si la donnée est récupérée depuis un système externe, alors nous n'avons aucun moyen d'être avertit d'une modification et une solution sera de supprimer les données en cache selon une période définie avec l'annotation <em>@CacheEvict</em>. Il faudra alors trouver un compris entre les performances de l'application et la mise à jour des données.</p>
+<p>Le code se trouve dans mon repo Github.</p>
+<p>Je vous invite à lire la documentation sur le cache Spring Boot :</p>
+<p>https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#cache
+https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-caching.html</p>
+
+</body>
+</html>
